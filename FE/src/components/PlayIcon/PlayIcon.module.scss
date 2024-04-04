@@ -1,0 +1,12 @@
+.wrapper {
+  background-color: #1ed760;
+  color: var(--text-base, #000000);
+  display: flex;
+  border-radius: 500px;
+  font-size: 18px;
+  min-block-size: 48px;
+  align-items: center;
+  justify-content: center;
+  inline-size: 48px;
+  block-size: 48px;
+}

@@ -1,0 +1,46 @@
+.wrapper{
+    padding: 24px 16px 0 16px;
+}
+.song-list {
+  width: 100%;
+  text-align: left;
+  margin-top: 20px;
+
+  thead th {
+    font-size: 11px;
+    color: #b3b3b3;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 5px 10px;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  tbody td {
+    border-top: 1px solid #282828;
+    font-size: 13px;
+    padding: 0 10px;
+    line-height: 40px;
+
+    &:first-child {
+      width: 80px;
+      text-align: right;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  tbody tr:hover td {
+    background: #282828;
+  }
+}
+a.edit{
+  color: white;
+}
+a.edit+button.delete{
+  margin-left: 18px;
+}

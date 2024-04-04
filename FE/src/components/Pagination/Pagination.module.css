@@ -1,0 +1,77 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 60px;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination .btn-page {
+  min-width: unset;
+  padding: 4px 16px;
+  font-size: 1.4rem;
+  color: var(--text_color);
+  -webkit-transition: all linear 0.3s;
+  transition: all linear 0.3s;
+}
+
+.pagination .btn-page:hover {
+  color: #a6b3b3;
+}
+
+.input-to-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input-to-page .btn-to-page {
+  min-width: unset;
+  border: 1px solid #e6e6e6;
+  font-size: 1.4rem;
+  margin-left: 5px;
+  padding: 4px 8px;
+  color: var(--text_color);
+}
+
+.input-to-page .btn-to-page:hover {
+  background-color: #a6b3b3;
+  color: #fff;
+}
+
+.input {
+  width: 4rem;
+  text-align: center;
+  padding: 4px 8px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+}
+
+.input::-webkit-inner-spin-button, .input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+.btn-page.active {
+  color: #fff;
+  background-color: #a6b3b3;
+}
+
+.btn-page.active:hover {
+  color: var(--border-color-primary);
+}
+/*# sourceMappingURL=Pagination.module.css.map */

@@ -1,0 +1,12 @@
+.wrapper {
+  min-height: 100vh;
+
+  background: #121212;
+  color: #fff;
+}
+
+.container {
+  padding-top: var(--height-header, 64px);
+  padding-left: var(--width-sidebar, 300px);
+  height: 100%;
+}

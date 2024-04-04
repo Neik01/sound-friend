@@ -1,0 +1,19 @@
+.wrapper{
+  padding: 24px 16px 0 16px;
+  width: 100%;
+}
+.title{
+  margin-bottom: 16px;
+}
+.from-group{
+  width: 100%;
+  margin-bottom: 16px;
+  .input{
+    width: 100%;
+    padding: 10px;
+  }
+}
+.update{
+  padding: 10px;
+  cursor: pointer;
+}

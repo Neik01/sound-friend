@@ -1,0 +1,62 @@
+.wrapper {
+  position: relative;
+
+  width: 100%;
+  padding: 16px;
+  background-color: #181818;
+  border-radius: 4px;
+  display: block;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    background-color: #282828;
+  }
+  &:hover .play {
+    display: block;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 100%;
+  text-decoration: none;
+  img {
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0);
+  }
+
+  strong {
+    font-size: 13px;
+    margin-top: 10px;
+    color: #fff;
+  }
+
+  p {
+    line-height: 22px;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #b3b3b3;
+  }
+
+  &:first-child {
+    margin: 0;
+  }
+}
+
+.play {
+  display: none;
+  position: absolute;
+  bottom: 29px;
+  right: 15px;
+  transform: translateY(-50%);
+  animation: fadedIcon 0.2s ease-in-out;
+}
+@keyframes fadedIcon {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

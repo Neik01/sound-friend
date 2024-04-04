@@ -1,0 +1,108 @@
+.loading {
+  animation: loadingSpinAround linear infinite 3s;
+}
+
+@keyframes loadingSpinAround {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1800deg);
+  }
+}
+
+//loading1
+
+.svg-loading-1 {
+  display: none;
+}
+
+@mixin ic-Spin-cycle-animation(
+  $animation-name: spin-cycle,
+  $animation-grow-to: 1,
+  $animation-shrink-to: 1,
+  $color-spin-highlight: #5f5ffe,
+  $color-spin-base: black
+) {
+  @keyframes #{$animation-name} {
+    from {
+      fill: $color-spin-highlight;
+      transform: scale($animation-grow-to);
+    }
+    to {
+      fill: $color-spin-base;
+      transform: scale($animation-shrink-to);
+    }
+  }
+}
+
+@mixin ic-Spin-cycle-branding(
+  $animation-name: spin-cycle,
+  $animation-grow-to: 1,
+  $animation-shrink-to: 1,
+  $spin-width: 72px,
+  $spin-height: 72px,
+  $spin-margin: 12px 24px,
+  $color-spin-base: rgba(white, 0),
+  $color-spin-highlight: #5f5ffe,
+  $number-of-paths: 8
+) {
+  @include ic-Spin-cycle-animation($animation-name, $animation-grow-to, $animation-shrink-to, $color-spin-highlight, $color-spin-base);
+  margin: $spin-margin;
+  width: $spin-width;
+  height: $spin-height;
+  > svg {
+    width: $spin-width;
+    height: $spin-height;
+    > * {
+      fill: $color-spin-base;
+      animation-name: $animation-name;
+      animation-duration: #{$number-of-paths * 0.1}s;
+      @for $i from 1 through ($number-of-paths) {
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{$i * 0.1}s;
+        }
+      }
+    }
+  }
+}
+
+%ic-Spin-cycle {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  > svg {
+    display: block;
+    overflow: visible;
+    > * {
+      transform: translate3d(0, 0, 0);
+      transform-origin: center;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+.ic-Spin-cycle--circles {
+  @extend %ic-Spin-cycle;
+  @include ic-Spin-cycle-branding(
+    circles,
+    // name your animation
+    1.5,
+    // how BIG should the child paths scale to?
+    1,
+    // how SMALL should the child paths scale to?
+    100px,
+    // what is the width of the spinner?
+    72px,
+    // what is the height of the spinner?
+    12px 24px,
+    // what margin should be around the spinner element?
+    rgba(#5f5ffe, 0.5),
+    // what is the base color of the spinner?
+    rgba(#5f5ffe, 0.8),
+    // what is the highlight color of the spinner?
+    8 // how many direct child paths/circles/etc. does the SVG have? Feel free to play with this to make the timing of the animation slower or faster.
+  );
+}
